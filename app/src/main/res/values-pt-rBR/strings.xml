@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">GeoQuiz</string>
+    <string name="true_button">Verdadeiro</string>
+    <string name="false_button">Falso</string>
+    <string name="correct_toast">Correto!</string>
+    <string name="incorrect_toast">Incorreto!</string>
+    <string name="next_button">Próximo</string>
+    <string name="question_australia">Camberra é a capital da Austrália.</string>
+    <string name="question_oceans">O Oceano Pacífico é maior que o Oceano Atlântico.</string>
+    <string name="question_mideast">O Canal de Suez conecta o Mar Vermelho e o Oceano Índico.</string>
+    <string name="question_africa">A nascente do Rio Nilo é no Egito.</string>
+    <string name="question_americas">O Rio Amazonas é o maior rio das Américas.</string>
+    <string name="question_asia">O Lago Baikal é o lago de água doce mais antigo e profundo do mundo.</string>
+</resources>
