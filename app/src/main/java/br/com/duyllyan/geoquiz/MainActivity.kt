@@ -32,13 +32,20 @@ class MainActivity : AppCompatActivity() {
             checkAnswer(false)
         }
         next_button.setOnClickListener {
-            currentIndex = (currentIndex + 1) % questionBank.size
-            updateQuestion()
+            nextQuestion()
+        }
+        question_text_view.setOnClickListener {
+            nextQuestion()
         }
         updateQuestion()
     }
     private fun updateQuestion() {
         question_text_view.setText(questionBank[currentIndex].textResId)
+    }
+
+    private fun nextQuestion() {
+        currentIndex = (currentIndex + 1) % questionBank.size
+        updateQuestion()
     }
 
     private fun checkAnswer (userAnswer: Boolean) {
