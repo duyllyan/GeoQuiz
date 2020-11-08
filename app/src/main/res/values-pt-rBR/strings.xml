@@ -5,6 +5,7 @@
     <string name="correct_toast">Correto!</string>
     <string name="incorrect_toast">Incorreto!</string>
     <string name="next_button">Próximo</string>
+    <string name="previous_button">Anterior</string>
     <string name="question_australia">Camberra é a capital da Austrália.</string>
     <string name="question_oceans">O Oceano Pacífico é maior que o Oceano Atlântico.</string>
     <string name="question_mideast">O Canal de Suez conecta o Mar Vermelho e o Oceano Índico.</string>

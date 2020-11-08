@@ -34,6 +34,9 @@ class MainActivity : AppCompatActivity() {
         next_button.setOnClickListener {
             nextQuestion()
         }
+        previous_button.setOnClickListener {
+            previousQuestion()
+        }
         question_text_view.setOnClickListener {
             nextQuestion()
         }
@@ -45,6 +48,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun nextQuestion() {
         currentIndex = (currentIndex + 1) % questionBank.size
+        updateQuestion()
+    }
+    private fun previousQuestion() {
+        currentIndex = if (currentIndex > 0) {
+            (currentIndex - 1) % questionBank.size
+        } else {
+            questionBank.size - 1
+        }
         updateQuestion()
     }
 
