@@ -8,6 +8,8 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.security.auth.login.LoginException
 
+private const val TAG = "MainActivity"
+
 class MainActivity : AppCompatActivity() {
 
     private val questionBank = listOf<Question>(
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(TAG, "onCreate(Bundle?) called")
         setContentView(R.layout.activity_main)
 
         true_button.setOnClickListener {
@@ -42,6 +45,32 @@ class MainActivity : AppCompatActivity() {
         }
         updateQuestion()
     }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart: called")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume: called")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause: called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop: called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy: called")
+    }
+    
     private fun updateQuestion() {
         question_text_view.setText(questionBank[currentIndex].textResId)
     }
