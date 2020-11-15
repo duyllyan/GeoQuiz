@@ -3,10 +3,8 @@ package br.com.duyllyan.geoquiz
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
-import javax.security.auth.login.LoginException
 
 private const val TAG = "MainActivity"
 
@@ -30,15 +28,21 @@ class MainActivity : AppCompatActivity() {
 
         true_button.setOnClickListener {
             checkAnswer(true)
+            it.isEnabled = false
+            false_button.isEnabled = false
         }
         false_button.setOnClickListener {
             checkAnswer(false)
+            it.isEnabled = false
+            true_button.isEnabled = false
         }
         next_button.setOnClickListener {
             nextQuestion()
+            buttonEnabledToggle()
         }
         previous_button.setOnClickListener {
             previousQuestion()
+            buttonEnabledToggle()
         }
         question_text_view.setOnClickListener {
             nextQuestion()
@@ -90,12 +94,33 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkAnswer (userAnswer: Boolean) {
         val correctAnswer = questionBank[currentIndex].answer
-        val messageResId = if (userAnswer == correctAnswer) {
+        val result = userAnswer == correctAnswer
+        if (checkResult()) {
+            questionBank[currentIndex].result = result
+        }
+        val messageResId = if (result) {
             R.string.correct_toast
         } else {
             R.string.incorrect_toast
         }
 
         Toast.makeText(this, messageResId, Toast.LENGTH_SHORT).show()
+        val performance: Int = (questionBank.count { it.result == true }/questionBank.size) * 100
+        if (checkComplete()) {
+            Toast.makeText(this, resources.getString(R.string.performance, performance), Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun checkResult(): Boolean {
+        return questionBank[currentIndex].result == null
+    }
+
+    private fun checkComplete(): Boolean {
+        return !questionBank.any {it.result == null}
+    }
+
+    private fun buttonEnabledToggle() {
+        true_button.isEnabled = checkResult()
+        false_button.isEnabled = checkResult()
     }
 }

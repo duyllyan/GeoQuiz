@@ -3,7 +3,8 @@ package br.com.duyllyan.geoquiz
 import androidx.annotation.StringRes
 
 data class Question (
-    @StringRes
+        @StringRes
     val textResId: Int,
-    val answer: Boolean
+    val answer: Boolean,
+    var result: Boolean? = null
 )
