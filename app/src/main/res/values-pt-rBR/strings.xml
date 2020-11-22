@@ -12,6 +12,6 @@
     <string name="question_africa">A nascente do Rio Nilo é no Egito.</string>
     <string name="question_americas">O Rio Amazonas é o maior rio das Américas.</string>
     <string name="question_asia">O Lago Baikal é o lago de água doce mais antigo e profundo do mundo.</string>
-    <string name="performance">Você acertou %d%% das perguntas</string>
+    <string name="performance">Você acertou %.1f%% das perguntas</string>
 
 </resources>
