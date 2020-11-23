@@ -1,7 +1,9 @@
 package br.com.duyllyan.geoquiz
 
+import android.os.Parcelable
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import kotlinx.android.parcel.Parcelize
 
 private const val TAG = "QuizViewModel"
 
@@ -35,9 +37,17 @@ class QuizViewModel : ViewModel() {
 
     private fun countCorrect() = questionBank.count { it.result == true } * 1f
 
-    fun getResult() : Boolean? {
-        return questionBank[currentIndex].result
+    /*fun getQuestionBank() : List<Question> {
+        return questionBank
     }
+
+    fun setQuestionBank(questionBank : List<Question>) {
+        this.questionBank = questionBank
+    }*/
+
+    /*fun getResult() : Boolean? {
+        return questionBank[currentIndex].result
+    }*/
 
     fun setResult(result : Boolean?) {
         questionBank[currentIndex].result = result
