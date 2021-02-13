@@ -13,5 +13,8 @@
     <string name="question_americas">O Rio Amazonas é o maior rio das Américas.</string>
     <string name="question_asia">O Lago Baikal é o lago de água doce mais antigo e profundo do mundo.</string>
     <string name="performance">Você acertou %.1f%% das perguntas</string>
-
+    <string name="warning_text">Você tem certeza que quer fazer isso?</string>
+    <string name="show_answer_button">Mostrar Resposta</string>
+    <string name="cheat_button">Trapaça!</string>
+    <string name="judgment_toast">Trapaçear é errado!</string>
 </resources>
