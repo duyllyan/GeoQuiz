@@ -1,10 +1,15 @@
 package br.com.duyllyan.geoquiz
 
+import android.app.ActionBar
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.core.view.marginTop
 import kotlinx.android.synthetic.main.activity_cheat.*
 
 private const val EXTRA_ANSWER_IS_TRUE = "br.com.duyllyan.geoquiz.answer_is_true"
@@ -29,6 +34,18 @@ class CheatActivity : AppCompatActivity() {
             cheatEnabled()
             wasCheated = true
         }
+
+        val textView = TextView(this)
+        val params = ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+        )
+        textView.apply {
+            text = resources.getString(R.string.android_version, Build.VERSION.SDK_INT)
+            layoutParams = params
+            setPadding(0, 12, 0, 0)
+        }
+        linear_layout_cheat_activity.addView(textView)
     }
 
     private fun cheatEnabled() {

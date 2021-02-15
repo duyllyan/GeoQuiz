@@ -17,4 +17,5 @@
     <string name="show_answer_button">Mostrar Resposta</string>
     <string name="cheat_button">Trapaça!</string>
     <string name="judgment_toast">Trapaçear é errado!</string>
+    <string name="android_version">"Versão do Android: %d"</string>
 </resources>
